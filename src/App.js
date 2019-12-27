@@ -5,7 +5,9 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
+import Friends from "./components/Friends/Friends";
 import {BrowserRouter, Route} from "react-router-dom";
+
 
 
 
@@ -19,11 +21,12 @@ function App(props) {
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/profile' render={ () => <Profile posts={props.posts}/>}/>
-                    <Route path='/dialogs' render={ () => <Dialogs message={props.message} dialogs={props.dialogs}/>}/>
+                    <Route path='/profile' render={ () => <Profile state={props.state.profilePage}/>}/>
+                    <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage}/>}/>
                     <Route path='/news' render={ () => <Profile/>}/>
                     <Route path='/music' render={ () => <Profile/>}/>
                     <Route path='/settings' render={ () => <Profile/>}/>
+                    <Route path='/friends' render={ () => <Friends state={props.state.friendsPage.friends}/>}/>
                 </div>
             </div>
         </BrowserRouter>

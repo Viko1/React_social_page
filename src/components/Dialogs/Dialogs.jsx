@@ -6,12 +6,16 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
+    let newMessageElement = React.createRef();
 
     let dialogsElements = props.state.dialogs.map( d => <DialogItem name={d.name} id={d.id}/> );
 
-
-
     let messageElements = props.state.message.map( m => <Message message={m.message}/> );
+
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text)
+    };
 
     return (
         <div className={s.dialogs}>
@@ -20,7 +24,15 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 { messageElements }
+                <div>
+                <div>
+                    <textarea ref={ newMessageElement }></textarea>
+                </div>
+                <button onClick={ addMessage }>Add post</button>
             </div>
+
+            </div>
+
         </div>
     )
 }

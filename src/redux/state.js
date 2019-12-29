@@ -10,6 +10,8 @@ let state = {
             {id: 5, message: 'yo2', likesCount: 1},
             {id: 6, message: 'Yo3', likesCount: 0},
         ],
+
+        newPostText: 'viko-best.com'
     },
 
     dialogsPage: {
@@ -43,15 +45,24 @@ let state = {
     }
 };
 
+
 export let addPost = (postMessage) => {
 
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     };
 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+};
+
+
+export let updateNewPostText = (newText) => {
+
+    state.profilePage.newPostText = newText
     rerenderEntireTree(state);
 };
 

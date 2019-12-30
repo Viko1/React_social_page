@@ -11,7 +11,7 @@ const MyPosts = (props) => {
     let postData = props.posts.map( p => <Post message = {p.message } likesCount = {p.likesCount}/>);
 
     let addPost = () => {
-        props.addPost(text);
+        props.addPost();
 
     };
 

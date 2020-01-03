@@ -13,6 +13,7 @@ let rerenderEntireTree = (state) => {
     ReactDOM.render(<App
         state={ state }
         dispatch ={ store.dispatch.bind(store)}
+        store = {store}
     />,
         document.getElementById('root'));
 };

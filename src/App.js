@@ -30,7 +30,10 @@ function App(props) {
                     <Route path='/news' render={ () => <Profile/>}/>
                     <Route path='/music' render={ () => <Profile/>}/>
                     <Route path='/settings' render={ () => <Profile/>}/>
-                    <Route path='/friends' render={ () => <Friends state={props.state.friendsPage.friends}/>}/>
+                    <Route path='/friends' render={ () => <Friends
+
+                        friendsOage={props.state.friendsPage.friends}
+                    />}/>
                 </div>
             </div>
         </BrowserRouter>

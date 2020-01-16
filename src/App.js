@@ -31,8 +31,8 @@ function App(props) {
                     <Route path='/music' render={ () => <Profile/>}/>
                     <Route path='/settings' render={ () => <Profile/>}/>
                     <Route path='/friends' render={ () => <Friends
-
-                        friendsOage={props.state.friendsPage.friends}
+                        friendsPage = {props.state.friendsPage}
+                        dispatch={ props.dispatch }
                     />}/>
                 </div>
             </div>

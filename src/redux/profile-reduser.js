@@ -42,11 +42,14 @@ export const addPostActionCreator = () => {
     }
 };
 
+
+
 export const updateNewPostActionCreator = (text) => {
     return {
         type: UPDATE_NEW_POST_TEXT, newText: text,
     }
 };
+
 
 
 export default profileReducer;
